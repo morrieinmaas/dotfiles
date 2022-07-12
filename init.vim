@@ -50,6 +50,11 @@ set shellcmdflag=-l
 " air-line
 " let g:airline_powerline_fonts = 1
 
+" exclude node modules from telescope
+lua << EOF
+require('telescope').setup{ defaults = { file_ignore_patterns = {"node_modules"} } }
+EOF
+
 if !exists('g:airline_symbols')
    let g:airline_symbols = {}
 endif
@@ -204,9 +209,11 @@ set ttyfast
 set noswapfile
 
 set termguicolors
+
 lua << EOF
 require("bufferline").setup{}
 EOF
+
 "set encoding=UTF-8
 
 " coc completion with tab

@@ -107,7 +107,7 @@ zstyle ':completion:*' menu select
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zconf{,ig}="nvim ~/.zshrc"
+alias zconf{,ig}="nvim ~/dotfiles/zshrc"
 alias zfresh="source ~/.zshrc"
 alias vim="nvim"
 alias v="nvim"
@@ -116,13 +116,13 @@ alias gcss="git commit -s -S"
 alias gco="git checkout"
 
 # vim config
-alias vconf{,ig}="v ~/.config/nvim/init.vim"
+alias vconf{,ig}="v ~/dotfiles/init.vim"
 
 # VSCode config
 alias codeconf="nvim ~/Library/Application\ Support/Code/User/settings.json"
 
 # tmux
-alias tconf{,ig}="nvim ~/.tmux.conf"
+alias tconf{,ig}="nvim ~/dotfiles/tmux.conf"
 alias tmux="tmux -u"
 alias tach="tmux attach -t"
 alias muxls="tmux ls"
@@ -227,3 +227,4 @@ if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv init -)"
 fi
 export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
+source /Users/moriarty/.cargo/env
