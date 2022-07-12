@@ -5,6 +5,8 @@ set clipboard+=unnamedplus
 call plug#begin()
  "colorschemes
  Plug 'rafi/awesome-vim-colorschemes'
+ " auto pairs for brackets etc
+ Plug 'jiangmiao/auto-pairs'
  " Dev Icons for files
  Plug 'ryanoasis/vim-devicons'
  " Treesitter
@@ -46,6 +48,9 @@ set termguicolors
 " use zsh
 set shell=zsh
 set shellcmdflag=-l
+
+" update buffer automatically on file changes
+set autoread
 
 " air-line
 " let g:airline_powerline_fonts = 1
