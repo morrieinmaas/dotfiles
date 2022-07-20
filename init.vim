@@ -21,6 +21,8 @@ call plug#begin()
  "Telescope
  Plug 'nvim-lua/plenary.nvim'
  Plug 'nvim-telescope/telescope.nvim'
+ " Git diff view
+ Plug 'sindrets/diffview.nvim'
  " coc code completion
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
  " airline
@@ -38,13 +40,29 @@ call plug#begin()
  Plug 'tpope/vim-fugitive'
  " ayu theme
  Plug 'ayu-theme/ayu-vim'
+ " melange theme
+ Plug 'savq/melange'
+ " Everforest theme
+ Plug 'sainnhe/everforest'
+ " comments
+ Plug 'terrortylor/nvim-comment'
 call plug#end()
 
 " ayu theme setting
 let ayucolor="dark"
-" set colorscheme
-colo ayu
 set termguicolors
+" light colorscheme background
+set background=dark
+" set colorscheme
+colo everforest
+
+" Everforest contrast
+let g:everforest_background = 'hard'
+" airline theme everforest
+let g:airline_theme = 'everforest'
+
+
+
 " use zsh
 set shell=zsh
 set shellcmdflag=-l
@@ -58,6 +76,11 @@ set autoread
 " exclude node modules from telescope
 lua << EOF
 require('telescope').setup{ defaults = { file_ignore_patterns = {"node_modules"} } }
+EOF
+
+" Setup comment
+lua << EOF
+require('nvim_comment').setup()
 EOF
 
 if !exists('g:airline_symbols')
@@ -118,6 +141,8 @@ nmap ; :
 nnoremap <leader>oo :e 
 " edit vim config
 nnoremap <leader>ov :e ~/.config/nvim/init.vim<CR>
+" Source vim config
+nnoremap <leader>sv :source $MYVIMRC<CR>
 
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files hidden=true<cr>

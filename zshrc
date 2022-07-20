@@ -228,3 +228,4 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
 source /Users/moriarty/.cargo/env
+ export LANG=en_US.UTF-8
